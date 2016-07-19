@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Redux</string>
+    <string name="semester">SEMESTER : </string>
+    <string name="cgpa">CGPA : </string>
+    <string name="gpa">   GPA : </string>
+    <string name="emptytext"> - </string>
+    <string name="gradeval"> F </string>
+    <string name="course">Course</string>
+    <string name="grade">Grade</string>
+    <string name="note">*NOTE:1.Mobile Phones Are Not Allowed.
+2.Please check class, section, session and room. Incase of any query contact exam section immediately.
+3.Be seated at your allocated seat 10 minutes before start of the paper. Student reporting late will not be allowed to enter in exam hall after 05 minutes of start of paper.</string>
+</resources>

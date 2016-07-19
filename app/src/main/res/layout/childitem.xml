@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="0dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+
+
+
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadowtest"
+       >
+
+
+       <!-- <Button
+            android:id="@+id/fuckk"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/divider"
+            android:clickable="false" />-->
+
+        <TextView
+            android:id="@+id/coursevalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/fuckk"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/gradeval"
+            android:gravity="left"
+            android:minHeight="20dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="1dp"
+            android:text="  course" />
+
+        <TextView
+            android:id="@+id/gradeval"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:minWidth="30dp"
+            android:padding="1dp"
+            android:paddingTop="1dp"
+            android:text="@string/gradeval"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
