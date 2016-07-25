@@ -152,6 +152,7 @@
             android:layout_marginLeft="16dp" />
 
 
+
     </RelativeLayout>
 
     <Button
@@ -159,6 +160,85 @@
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_below="@id/r3"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/divider"
+        android:clickable="false" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/r4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:layout_below="@+id/r3"
+        android:background="?attr/selectableItemBackground">
+
+
+        <TextView
+            android:id="@+id/Heading4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Tips"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Summary4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Heading4"
+            android:text="Show popup tips again" />
+
+    </RelativeLayout>
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@id/r3"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/divider"
+        android:clickable="false" />
+
+
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:layout_below="@+id/r4"
+        android:background="?attr/selectableItemBackground">
+
+
+        <TextView
+            android:id="@+id/Heading5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Build Version"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Summary5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Heading5"
+            android:text="V 1.2.4" />
+
+    </RelativeLayout>
+    <Button
+        android:layout_below="@+id/r1"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
         android:background="@color/divider"

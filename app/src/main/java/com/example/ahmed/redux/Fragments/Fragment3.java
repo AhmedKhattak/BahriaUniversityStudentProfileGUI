@@ -32,10 +32,16 @@ public class Fragment3 extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view3);
         mAdapter=new AttendenceAdapter(AttendenceProvider.getAttendenceList());
-        mLayoutManager = new LinearLayoutManager(getContext());
+        mLayoutManager = new LinearLayoutManager(getContext()){
+            @Override
+            protected int getExtraLayoutSpace(RecyclerView.State state) {
+                return 3000;
+            }
+        };
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        //recyclerView.scrollToPosition(0);
 
     }
 

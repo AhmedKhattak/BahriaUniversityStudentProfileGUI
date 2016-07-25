@@ -31,7 +31,7 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<ExamSeatingPlan
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.examseatingplan, parent, false);
+                .inflate(R.layout.examseatingalternate, parent, false);
 
         return new ViewHolder(itemView);
     }
@@ -46,8 +46,6 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<ExamSeatingPlan
         holder.course_.setText(exam_seating_plan.getCourse());
         holder.col.setText(exam_seating_plan.getColumn());
         holder.row.setText(exam_seating_plan.getRow());
-
-
     }
 
     @Override
@@ -57,7 +55,6 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<ExamSeatingPlan
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView course_,date,time_,room,row,col;
-        public CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
             course_=(TextView) itemView.findViewById(R.id.courseval);
@@ -66,7 +63,6 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<ExamSeatingPlan
             room=(TextView) itemView.findViewById(R.id.roomval);
             row=(TextView) itemView.findViewById(R.id.rowval);
             col=(TextView) itemView.findViewById(R.id.columnval);
-            cardView=(CardView) itemView.findViewById(R.id.examseatingplancard);
         }
     }
 
