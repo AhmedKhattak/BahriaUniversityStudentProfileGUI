@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/r2"
+    android:background="?attr/selectableItemBackground"
+    android:paddingBottom="18dp"
+
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_settings_black_24dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/img"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heading"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/img"/>
+
+    <TextView
+        android:id="@+id/Summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Heading"
+        android:layout_toLeftOf="@+id/switcher"
+        android:text="Summary or description or status"
+        android:layout_toRightOf="@+id/img"
+        />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp" />
+
+</RelativeLayout>
