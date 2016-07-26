@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarr"
         android:layout_width="match_parent"
@@ -21,37 +22,9 @@
         android:background="@drawable/shadow" />
 
 
-    <RelativeLayout
-        android:id="@+id/r1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        android:layout_below="@+id/toolbarr"
-        android:background="?attr/selectableItemBackground">
-
-
-        <TextView
-            android:id="@+id/Heading1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Background Syncing"
-            android:textColor="#000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/Summary1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Heading1"
-            android:text="Default (Never)" />
-
-    </RelativeLayout>
 
     <Button
-        android:layout_below="@+id/r1"
+        android:layout_below="@id/toolbarr"
         android:id="@+id/fuckk"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
@@ -67,19 +40,23 @@
         android:id="@+id/r2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/r1"
+        android:layout_below="@+id/toolbarr"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:background="?attr/selectableItemBackground">
 
+
+
+
         <TextView
             android:id="@+id/Heading2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yuck"
-            android:textColor="#000" />
+            android:textColor="#000"
+            />
 
         <TextView
             android:id="@+id/Summary2"
@@ -199,7 +176,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:layout_below="@id/r3"
+        android:layout_below="@id/r4"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
         android:background="@color/divider"
@@ -235,7 +212,7 @@
 
     </RelativeLayout>
     <Button
-        android:layout_below="@+id/r1"
+        android:layout_below="@+id/r5"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
@@ -245,5 +222,42 @@
         android:clickable="false" />
 
 
+    <RelativeLayout
+        android:id="@+id/r6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:layout_below="@+id/r5"
+        android:background="?attr/selectableItemBackground">
+
+
+        <TextView
+            android:id="@+id/Heading6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Build Version"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Summary6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Heading6"
+            android:text="V 1.2.4" />
+
+    </RelativeLayout>
+    <Button
+        android:layout_below="@+id/r6"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/divider"
+        android:clickable="false" />
 
 </RelativeLayout>
