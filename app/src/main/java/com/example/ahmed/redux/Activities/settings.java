@@ -27,6 +27,7 @@ public class settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         appCompatActivity=this;
         toolbar = (Toolbar) findViewById(R.id.toolbarr);
+        toolbar.setTitle("Settings");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,7 @@ public class settings extends AppCompatActivity {
                                 return true;
                             }
                         })
-                        .positiveText("Wtf")
+                        .positiveText("Set")
                         .show();
             }
         });
