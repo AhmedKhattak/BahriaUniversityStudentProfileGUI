@@ -31,6 +31,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private final int DEFAULT = 0, CHECKBOX = 1, SWITCH = 2;
     Context context;
     int color;
+    private ClickListener clickListener;
 
     public SettingsAdapter(List<Object> objectList, Context context, int color) {
         this.objectList = objectList;
@@ -75,6 +76,11 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return viewHolder;
     }
 
+
+    /**
+     * idher shared pref se data nikalta hai binding ke waqt phir elseifs me jakay nikalta hai idher save nae krna kuch bhi
+     * save actitivty se krna hai
+     */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
@@ -95,12 +101,13 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             .icon(FontAwesome.Icon.faw_refresh)
                             .color(color)
                             .sizeDp(24));
-                } else if (settings_model_default.getHeader() == "File Save Location") {
+                    //ider summary change karni
+                } /*else if (settings_model_default.getHeader() == "File Save Location") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
                             .icon(FontAwesome.Icon.faw_floppy_o)
                             .color(color)
                             .sizeDp(24));
-                } else if (settings_model_default.getHeader() == "Privacy Policy") {
+                }*/ else if (settings_model_default.getHeader() == "Privacy Policy") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
                             .icon(FontAwesome.Icon.faw_user_secret)
                             .color(color)
@@ -146,6 +153,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             .icon(FontAwesome.Icon.faw_bell)
                             .color(color)
                             .sizeDp(24));
+                    //ider summary badalni
                 }
                 break;
 
@@ -173,7 +181,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public static class settings_view_default extends RecyclerView.ViewHolder {
+    public  class settings_view_default extends RecyclerView.ViewHolder implements  View.OnClickListener{
 
         public TextView heading, summary;
         //public RelativeLayout relativeLayout;
@@ -181,26 +189,54 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public settings_view_default(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             heading = (TextView) itemView.findViewById(R.id.Heading);
             summary = (TextView) itemView.findViewById(R.id.Summary);
             imageView = (ImageView) itemView.findViewById(R.id.img);
             //relativeLayout=(RelativeLayout)itemView.findViewById(R.id.r1);
         }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) {
+                clickListener.ItemClicked(view,getAdapterPosition(),this);
+            }
+        }
     }
 
-    public static class settings_view_switch extends RecyclerView.ViewHolder {
+    public  class settings_view_switch extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView heading, summary;
         public SwitchCompat switchCompat;
         // public RelativeLayout relativeLayout;
         public ImageView imageView;
+
         public settings_view_switch(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             heading = (TextView) itemView.findViewById(R.id.Heading);
             summary = (TextView) itemView.findViewById(R.id.Summary);
             switchCompat = (SwitchCompat) itemView.findViewById(R.id.switcher);
             imageView = (ImageView) itemView.findViewById(R.id.img);
             // relativeLayout=(RelativeLayout)itemView.findViewById(R.id.r3);
         }
+
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) {
+                clickListener.ItemClicked(view,getAdapterPosition(),this);
+            }
+
+        }
     }
+
+    public void SetClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        public void ItemClicked(View view, int position,Object object);
+    }
+
 }
