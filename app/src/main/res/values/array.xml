@@ -1,13 +1,19 @@
 <resources>
     <string-array name="listArray">
-        <item>Headings</item>
-        <item>Headings and Details</item>
-        <item>All Data</item>
+        <item>Never</item>
+        <item>Every hour</item>
+        <item>Every day</item>
+        <item>At Univeristy start time</item>
+        <item>Every Morning</item>
+        <item>After Univerity</item>
     </string-array>
 
     <string-array name="listValues">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 </resources>
