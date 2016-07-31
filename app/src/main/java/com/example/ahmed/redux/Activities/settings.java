@@ -73,7 +73,7 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
                 // do what you need to do here after the delay
                 /*getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
+                        .setCustomAnimations(R.anim.slide_in_right_with_fadein, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                         .replace(R.id.roooot, new FragmentPrivacyPolicy(), "Fragment_PrivacyPolicy")
                         .addToBackStack(null)
                         .commit();
@@ -99,7 +99,7 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
         } else if (shat == "license") {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
+                    .setCustomAnimations(R.anim.slide_in_right_with_fadein, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
                     .replace(R.id.roooot, new FragmentOpenSource(), "Fragment_OpenSource")
                     .addToBackStack(null)
                     .commit();
