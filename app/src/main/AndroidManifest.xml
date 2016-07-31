@@ -1,31 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ahmed.redux">
 
     <application
+        android:name=".Application.application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/MyMaterialTheme.launchersplash"
-            android:launchMode="singleTop">
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:theme="@style/MyMaterialTheme.launchersplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.settings"
-            android:theme="@style/MyMaterialThemezzz"
-            android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".Activities.settings"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyMaterialThemezzz">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
+                android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:name=".Activities.privacypolicy"
+            android:parentActivityName=".Activities.settings"
+            android:theme="@style/MyMaterialThemezzz">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.settings" />
+        </activity>
+
+
+        <activity android:name=".Activities.opensource"
+            android:parentActivityName=".Activities.settings"
+            android:theme="@style/MyMaterialThemezzz">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.settings"/>
+        </activity>
+
 
     </application>
 
