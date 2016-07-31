@@ -2,8 +2,6 @@ package com.example.ahmed.redux;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -22,7 +20,6 @@ import com.example.ahmed.redux.Fragments.Fragment1;
 import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
 
@@ -117,7 +114,7 @@ public class MainActivity extends AppCompatActivity  {
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
                 Intent i = new Intent(this, settings.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.slide_in_right_activity,R.anim.nothing);
+                overridePendingTransition(R.anim.test,android.R.anim.fade_out);
                 return true;
 
             case R.id.tabdownload:
