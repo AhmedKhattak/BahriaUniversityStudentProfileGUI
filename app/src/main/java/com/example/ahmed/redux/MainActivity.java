@@ -33,19 +33,19 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
     private TabLayout tabLayout;
+    private ViewPager viewPager;
 
 
 
-    @Override
+    /*@Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
 
 
 
-    }
+    }*/
 
-    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.MyMaterialThemezzz);
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity  {
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
                 Intent i = new Intent(this, settings.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right_activity,R.anim.nothing);
                 return true;
 
             case R.id.tabdownload:
