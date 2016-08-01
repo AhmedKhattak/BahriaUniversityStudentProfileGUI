@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity  {
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
                 Intent i = new Intent(this, settings.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.test,android.R.anim.fade_out);
+                overridePendingTransition(R.anim.test3,android.R.anim.fade_out);
                 return true;
 
             case R.id.tabdownload:

@@ -159,47 +159,41 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
                         .customView(R.layout.privacypolicy, false)
                         .positiveText("Accept")
                         .show();*/
-                Intent i = new Intent(this, privacypolicy.class);
+                Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
-
+                overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Open Source") {
                 Intent i = new Intent(this, opensource.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Build Version") {
                 //nothing pata nae shaid kuch daldon aween me
             }
         }
     }
 
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case android.R.id.home:
                 Log.d("Fuck", "sht");
-                if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-                    finish();
-                } else {
-                    getSupportFragmentManager().popBackStack();
-                    toolbar.setTitle("Settings");
-                }
-                return true;
+                finish();
+                overridePendingTransition(R.anim.nothing,R.anim.test4);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }*/
+        return true;
+    }
 
 
-    /*@Override
+    @Override
     public void onBackPressed() {
         Log.d("Fuck", "sht");
-        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-            finish();
-        } else {
-            getSupportFragmentManager().popBackStack();
-            toolbar.setTitle("Settings");
-        }
-    }*/
+        finish();
+        overridePendingTransition(R.anim.nothing,R.anim.test4);
+    }
 
 
 }
