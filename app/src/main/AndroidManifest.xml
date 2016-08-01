@@ -50,6 +50,16 @@
         </activity>
 
 
+
+        <activity android:name=".Activities.AboutActivity"
+            android:parentActivityName=".Activities.settings"
+            android:theme="@style/MyMaterialThemezzz">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.settings"/>
+        </activity>
+
+
     </application>
 
 </manifest>
