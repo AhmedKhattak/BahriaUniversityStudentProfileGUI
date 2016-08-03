@@ -7,15 +7,21 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
 import com.example.ahmed.redux.Activities.settings;
+import com.example.ahmed.redux.Adapters.NavDrawerAdapter;
 import com.example.ahmed.redux.Fragments.Fragment1;
 import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
@@ -31,21 +37,27 @@ public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
+    int ICONS[] = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+    String NAME = "Ahmed Khattak";
+    String EMAIL = "01-134132-016";
+    int PROFILE = R.drawable.aka;
+    RecyclerView mRecyclerView;                           // Declaring RecyclerView
+    RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
+    RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
+    DrawerLayout Drawer;                                  // Declaring DrawerLayout
 
+    ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
 
 
     /*@Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
-
-
-
     }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.MyMaterialThemezzz);
+        setTheme(R.style.MyMaterialThemezzz2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -57,6 +69,40 @@ public class MainActivity extends AppCompatActivity  {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mAdapter = new NavDrawerAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);
+        mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
+
+        mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
+
+
+
+
+        Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.openDrawer,R.string.closeDrawer){
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
+                // open I am not going to put anything here)
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                // Code here will execute once drawer is closed
+            }
+
+
+
+        };
+
+
+        Drawer.addDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
 
        /* setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
