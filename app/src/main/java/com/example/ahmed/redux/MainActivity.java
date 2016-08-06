@@ -25,6 +25,7 @@ import com.example.ahmed.redux.Adapters.NavDrawerAdapter;
 import com.example.ahmed.redux.Fragments.Fragment1;
 import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
+import com.example.ahmed.redux.Providers.NavDrawerItemProvider;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -37,24 +38,18 @@ public class MainActivity extends AppCompatActivity  {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
-    int ICONS[] = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
     String NAME = "Ahmed Khattak";
-    String EMAIL = "01-134132-016";
+    String ENROLL = "01-134132-016";
     int PROFILE = R.drawable.aka;
     RecyclerView mRecyclerView;                           // Declaring RecyclerView
     RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
     RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
     DrawerLayout Drawer;                                  // Declaring DrawerLayout
-
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
-
-
     /*@Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
     }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.MyMaterialThemezzz2);
@@ -71,7 +66,7 @@ public class MainActivity extends AppCompatActivity  {
         setupTabIcons();
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);
-        mAdapter = new NavDrawerAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);
+        mAdapter = new NavDrawerAdapter(this, NavDrawerItemProvider.getExamSeatingPlanData(),getResources().getColor(R.color.secondary_text));
         mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
 
         mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
@@ -139,6 +134,8 @@ public class MainActivity extends AppCompatActivity  {
 
 
     }
+
+
 
 
 
