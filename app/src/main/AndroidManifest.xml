@@ -13,7 +13,7 @@
         <activity
             android:name=".MainActivity"
             android:hardwareAccelerated="true"
-            android:launchMode="singleTask"
+            android:launchMode="standard"
             android:theme="@style/MyMaterialTheme.launchersplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,7 @@
         <activity
             android:name=".Activities.settings"
             android:parentActivityName=".MainActivity"
+
             android:theme="@style/MyMaterialThemezzz">
 
             <meta-data
