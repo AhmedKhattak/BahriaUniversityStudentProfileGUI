@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.example.ahmed.redux.Activities.ProfileActivity;
 import com.example.ahmed.redux.Activities.settings;
 import com.example.ahmed.redux.Adapters.NavDrawerAdapter;
 import com.example.ahmed.redux.Fragments.Fragment1;
@@ -162,7 +163,9 @@ public class MainActivity extends AppCompatActivity  {
 
             case R.id.tabdownload:
                 // User chose the "tabdownload" action open modal or something
-                Toast.makeText(this, "Download tab clicked !", Toast.LENGTH_SHORT).show();
+                Intent j = new Intent(this, ProfileActivity.class);
+                startActivity(j);
+                overridePendingTransition(R.anim.test3,android.R.anim.fade_out);
                 return true;
 
             case R.id.overflow:
