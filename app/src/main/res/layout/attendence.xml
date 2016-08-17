@@ -19,21 +19,17 @@
         android:background="@color/white"
         android:layout_margin="16dp">
 
-        <TextView
-            android:id="@+id/course"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="Course"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/coursevala"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/youhave"
-            android:layout_toRightOf="@+id/course"
-            android:text="Computer Organization and Assembly Language" />
+            android:text="Computer Organization and Assembly Language"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentLeft="true"/>
 
         <TextView
             android:id="@+id/teacher"
@@ -118,8 +114,8 @@
             android:layout_alignParentRight="true"
             android:text="You can take"
             android:textStyle="bold"
-
-
+            android:textSize="10sp"
+            android:layout_marginLeft="4dp"
             />
 
         <TextView
@@ -128,10 +124,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/youhave"
-            android:paddingRight="30dp"
+            android:paddingRight="25dp"
             android:text="5"
             android:textColor="@color/primary"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             />
 
@@ -145,6 +141,8 @@
             android:paddingRight="10dp"
             android:text="days off !"
             android:textStyle="bold"
+            android:textSize="10sp"
+
 
             />
 
