@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ahmed.redux.Interfaces.Comm;
 import com.example.ahmed.redux.Models.NavItems_Header_Model;
 import com.example.ahmed.redux.Models.NavItems_Model;
 import com.example.ahmed.redux.R;
@@ -30,6 +32,7 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
     private String enrollment;       //String Resource for header view enrollment
     public List<Object> navItemsModelList;
     int size=20;
+    private ClickListener clickListener;
 
 
     public NavDrawerAdapter(Context context, List<Object> navItemsModelList, int color) {
@@ -37,6 +40,7 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
         this.context = context;
         this.navItemsModelList = navItemsModelList;
         this.color = color;
+
     }
 
     @Override
@@ -151,7 +155,7 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
         return TYPE_ITEM;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         int Holderid;
 
         TextView textView;
@@ -170,7 +174,8 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
             if (ViewType == TYPE_ITEM) {
                 textView = (TextView) itemView.findViewById(R.id.rowText); // Creating TextView object with the id of textView from item_row.xml
                 imageView = (ImageView) itemView.findViewById(R.id.rowIcon);// Creating ImageView object with the id of ImageView from item_row.xml
-                Holderid = 1;                                               // setting holder id as 1 as the object being populated are of type item row
+                Holderid = 1;
+                itemView.setOnClickListener(this);
             } else {
 
 
@@ -182,5 +187,19 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
         }
 
 
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) {
+                clickListener.ItemClicked(view,getAdapterPosition(),this);
+            }
+        }
+    }
+
+    public void SetClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void ItemClicked(View view, int position,Object object);
     }
 }
