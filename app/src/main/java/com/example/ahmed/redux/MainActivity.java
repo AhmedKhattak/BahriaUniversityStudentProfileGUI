@@ -28,32 +28,42 @@ import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
 import com.example.ahmed.redux.Providers.NavDrawerItemProvider;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
-
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.holder.BadgeStyle;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.ClickListener {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     String NAME = "Ahmed Khattak";
     String ENROLL = "01-134132-016";
     int PROFILE = R.drawable.aka;
-    RecyclerView mRecyclerView;                           // Declaring RecyclerView
-    RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
-    RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
-    DrawerLayout Drawer;                                  // Declaring DrawerLayout
-    ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
+
+    /* RecyclerView mRecyclerView;                           // Declaring RecyclerView
+     NavDrawerAdapter mAdapter;                        // Declaring Adapter For Recycler View
+     RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
+     DrawerLayout Drawer;                                  // Declaring DrawerLayout*/
+   /* ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle*/
     /*@Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
     }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.MyMaterialThemezzz2);
+        setTheme(R.style.MyMaterialThemezzz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -65,11 +75,11 @@ public class MainActivity extends AppCompatActivity  {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
-        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
+       /* mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mAdapter = new NavDrawerAdapter(this, NavDrawerItemProvider.getExamSeatingPlanData(),getResources().getColor(R.color.secondary_text));
+        mAdapter.SetClickListener(this);
         mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
-
         mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
 
 
@@ -92,53 +102,110 @@ public class MainActivity extends AppCompatActivity  {
                 // Code here will execute once drawer is closed
             }
 
-
-
         };
 
 
         Drawer.addDrawerListener(mDrawerToggle);
-        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
+        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State*/
 
-       /* setupViewPager(viewPager);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();*/
-       /* AccountHeader headerResult = new AccountHeaderBuilder()
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withSelectionListEnabledForSingleProfile(false)
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.w1)
-                .withSelectionListEnabledForSingleProfile(false)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Ahmed Rafiullah").withEmail("01-134132-016").withIcon(R.drawable.aka)
-                )
+                        new ProfileDrawerItem().withName("Ahmed Khattak").withEmail("01-134132-016").withIcon(getResources().getDrawable(R.drawable.aka))
+
+                ).withAlternativeProfileHeaderSwitching(false)
                 .build();
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName("Notifications").withIcon(FontAwesome.Icon.faw_bell).withBadge("22").withBadgeStyle(new BadgeStyle(Color.RED, Color.RED).withTextColor(Color.WHITE)).withIdentifier(1);
+
+
+        //if you want to update the items at a later time it is recommended to keep it in a variable
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(FontAwesome.Icon.faw_user);
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(FontAwesome.Icon.faw_bell);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(FontAwesome.Icon.faw_list);
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(FontAwesome.Icon.faw_pencil);
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(FontAwesome.Icon.faw_cog);
+        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(FontAwesome.Icon.faw_bullhorn);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(FontAwesome.Icon.faw_commenting);
+        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Privacy Policy").withIcon(FontAwesome.Icon.faw_user_secret);
+        PrimaryDrawerItem item9 = new PrimaryDrawerItem().withIdentifier(1).withName("Change Password").withIcon(FontAwesome.Icon.faw_key);
+        PrimaryDrawerItem item10 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(FontAwesome.Icon.faw_sign_out);
+
+        //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
                 .withActivity(this)
-                .withTranslucentStatusBar(true)
                 .withToolbar(toolbar)
-                .withActionBarDrawerToggle(true)
-                .withAccountHeader(headerResult)
-                .addDrawerItems(new PrimaryDrawerItem().withName("Personal Info").withIcon(FontAwesome.Icon.faw_user).withIdentifier(2), item1,
+                .addDrawerItems(
+                        item1,
+                        item2,
+                        item3,
+                        item4,
                         new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withName("Settings").withIcon(FontAwesome.Icon.faw_cog).withIdentifier(3),
-                        new SecondaryDrawerItem().withName("Help").withIcon(FontAwesome.Icon.faw_question).withIdentifier(4),
-                        new SecondaryDrawerItem().withName("Open Source").withIcon(FontAwesome.Icon.faw_github).withIdentifier(5),
-                        new SecondaryDrawerItem().withName("Contact").withIcon(FontAwesome.Icon.faw_bullhorn).withIdentifier(6),
-                        new SecondaryDrawerItem().withName("About").withIcon(FontAwesome.Icon.faw_info).withIdentifier(7),
-                        new SecondaryDrawerItem().withName("Sign Out").withIcon(FontAwesome.Icon.faw_sign_out).withIdentifier(8))
-                .withSelectedItem(-1)
-                .build();
-*/
-        //endregion
+                        item5,
+                        item6,
+                        item7, item8, item9,item10
+                )
+                .withAccountHeader(headerResult)
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
+                        if(position==1)
+                        {
+                            // User chose the "tabdownload" action open modal or something
+                            Intent j = new Intent(MainActivity.this, ProfileActivity.class);
+                            startActivity(j);
+                            //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                        }
+                        else if(position==2)
+                        {
+
+                        }
+                        else if(position==3)
+                        {
+
+                        }
+                        else if(position==4)
+                        {
+
+                        }
+                        else if(position==5)
+                        {
+
+                        }
+                        else if(position==6)
+                        {
+                            Intent i = new Intent(MainActivity.this, settings.class);
+                            startActivity(i);
+                            //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                        }
+                        else if(position==7)
+                        {
+
+                        }
+                        else if(position==8)
+                        {
+
+                        }
+                        else if(position==9)
+                        {
+
+                        }
+                        else if(position==10)
+                        {
+
+                        }
+                        return true;
+                    }
+                }).withActionBarDrawerToggleAnimated(true).withSelectedItem(-1).withDelayOnDrawerClose(-1)
+                .build();
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
 
 
     }
-
-
-
-
 
 
     @Override
@@ -149,8 +216,6 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -158,15 +223,9 @@ public class MainActivity extends AppCompatActivity  {
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
                 Intent i = new Intent(this, settings.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.test3,android.R.anim.fade_out);
+                overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
                 return true;
 
-            case R.id.tabdownload:
-                // User chose the "tabdownload" action open modal or something
-                Intent j = new Intent(this, ProfileActivity.class);
-                startActivity(j);
-                overridePendingTransition(R.anim.test3,android.R.anim.fade_out);
-                return true;
 
             case R.id.overflow:
                 // User chose the "tabdownload" action open modal or something
@@ -189,18 +248,18 @@ public class MainActivity extends AppCompatActivity  {
 
     private void setupTabIcons() {
 
-            tabLayout.getTabAt(0).setIcon(new IconicsDrawable(this)
-                    .icon(CommunityMaterial.Icon.cmd_account_check)
-                    .color(Color.WHITE)
-                    .sizeDp(21));
-            tabLayout.getTabAt(1).setIcon(new IconicsDrawable(this)
-                    .icon(CommunityMaterial.Icon.cmd_calendar_clock)
-                    .color(Color.WHITE)
-                    .sizeDp(21));
-            tabLayout.getTabAt(2).setIcon(new IconicsDrawable(this)
-                    .icon(CommunityMaterial.Icon.cmd_format_list_bulleted_type)
-                    .color(Color.WHITE)
-                    .sizeDp(21));
+        tabLayout.getTabAt(0).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_account_check)
+                .color(Color.WHITE)
+                .sizeDp(21));
+        tabLayout.getTabAt(1).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_calendar_clock)
+                .color(Color.WHITE)
+                .sizeDp(21));
+        tabLayout.getTabAt(2).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_format_list_bulleted_type)
+                .color(Color.WHITE)
+                .sizeDp(21));
 
     }
 
@@ -210,6 +269,20 @@ public class MainActivity extends AppCompatActivity  {
         adapter.addFragment(new Fragment2(), "TWO");
         adapter.addFragment(new Fragment1(), "THREE");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void ItemClicked(View view, int position, Object object) {
+        if (position == 1) {
+            // User chose the "tabdownload" action open modal or something
+            Intent j = new Intent(this, ProfileActivity.class);
+            startActivity(j);
+            overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+        } else if (position == 6) {
+            Intent i = new Intent(this, settings.class);
+            startActivity(i);
+            overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+        }
     }
 
 
