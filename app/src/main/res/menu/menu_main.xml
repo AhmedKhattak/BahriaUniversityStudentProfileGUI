@@ -16,9 +16,6 @@
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="Settings"/>
 
-        <item android:id="@+id/tabdownload"
-            android:icon="@drawable/ic_file_download_black_24dp"
-        android:title="Save Tab"/>
     </menu>
 </item>
     </menu>
