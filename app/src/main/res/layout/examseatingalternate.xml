@@ -8,9 +8,7 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp"
-    >
-
+    android:layout_marginTop="8dp">
 
 
     <LinearLayout
@@ -22,97 +20,88 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:id="@+id/course"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:text="Course"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/courseval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
                 android:layout_toRightOf="@+id/course"
-                />
+                android:text="course"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/courseval"
+                android:layout_marginBottom="4dp"
                 android:text="Date"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dateval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
-                android:layout_toRightOf="@+id/date"
                 android:layout_below="@+id/courseval"
-                />
+                android:layout_toRightOf="@+id/date"
+                android:text="-" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/time"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dateval"
+                android:layout_marginBottom="4dp"
                 android:text="Time"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/timeval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
-                android:layout_toRightOf="@+id/time"
                 android:layout_below="@+id/dateval"
-                />
+                android:layout_toRightOf="@+id/time"
+                android:text="-" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/room"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/timeval"
+                android:layout_marginBottom="4dp"
                 android:text="Room"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/roomval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
-                android:layout_toRightOf="@+id/room"
                 android:layout_below="@+id/timeval"
+                android:layout_toRightOf="@+id/room"
+                android:text="-"
 
                 />
         </LinearLayout>
@@ -121,50 +110,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/row"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/roomval"
+                android:layout_marginBottom="4dp"
                 android:text="Row"
-                android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/rowval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
-                android:layout_toRightOf="@+id/row"
                 android:layout_below="@+id/roomval"
-                />
+                android:layout_toRightOf="@+id/row"
+                android:text="-" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/column"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rowval"
                 android:text="Column"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
 
             <TextView
                 android:id="@+id/columnval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
-                android:layout_toRightOf="@+id/column"
                 android:layout_below="@+id/rowval"
-                />
+                android:layout_toRightOf="@+id/column"
+                android:text="-" />
         </LinearLayout>
 
     </LinearLayout>
