@@ -55,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
             case android.R.id.home:
                 Log.d("Fuck", "sht");
                 finish();
-                overridePendingTransition(R.anim.nothing,R.anim.test4);
+               // overridePendingTransition(R.anim.nothing,R.anim.test4);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -68,6 +68,6 @@ public class ProfileActivity extends AppCompatActivity {
     public void onBackPressed() {
         Log.d("Fuck", "sht");
         finish();
-        overridePendingTransition(R.anim.nothing,R.anim.test4);
+        //overridePendingTransition(R.anim.nothing,R.anim.test4);
     }
 }

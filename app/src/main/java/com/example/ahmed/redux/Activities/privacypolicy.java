@@ -42,7 +42,7 @@ public class privacypolicy  extends AppCompatActivity {
             case android.R.id.home:
                 Log.d("Fuck", "sht");
                 finish();
-                overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -55,6 +55,6 @@ public class privacypolicy  extends AppCompatActivity {
     public void onBackPressed() {
         Log.d("Fuck", "sht");
         finish();
-        overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+        //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
     }
 }

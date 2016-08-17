@@ -161,11 +161,11 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
                         .show();*/
                 Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Open Source") {
                 Intent i = new Intent(this, opensource.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Build Version") {
                 //nothing pata nae shaid kuch daldon aween me
             }
@@ -179,7 +179,7 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
             case android.R.id.home:
                 Log.d("Fuck", "sht");
                 finish();
-                overridePendingTransition(R.anim.nothing,R.anim.test4);
+                //overridePendingTransition(R.anim.nothing,R.anim.test4);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -192,7 +192,7 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
     public void onBackPressed() {
         Log.d("Fuck", "sht");
         finish();
-        overridePendingTransition(R.anim.nothing,R.anim.test4);
+        //overridePendingTransition(R.anim.nothing,R.anim.test4);
     }
 
 
