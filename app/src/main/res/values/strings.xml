@@ -114,6 +114,5 @@ THE SOFTWARE.</string>
     <string name="openDrawer">open drawer</string>
     <string name="closeDrawer">close drawer</string>
     <string name="font_name_Roboto">Roboto</string>
-
-
+    <string name="note_"><b>NOTE:</b> \n<b>1.</b>Mobile Phones Are Not Allowed.\n<b>2.</b>Please check class, section, session and room. Incase of any query contact exam section immediately.\n<b>3.</b>Be seated at your allocated seat 10 minutes before start of the paper. Students reporting late will not be allowed to enter in exam hall after 05 minutes of start of paper.</string>
 </resources>
