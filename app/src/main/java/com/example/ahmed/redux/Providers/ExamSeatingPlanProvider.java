@@ -1,6 +1,8 @@
 package com.example.ahmed.redux.Providers;
 
 import com.example.ahmed.redux.Models.Exam_Seating_Plan;
+import com.example.ahmed.redux.Models.Note_Model;
+import com.example.ahmed.redux.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +19,12 @@ public class ExamSeatingPlanProvider {
     public static String[] row = {" ", " ", " ", " ", "4", "2", "2", "5", "5", "2"};
     public static String[] col = {" ", " ", " ", " ", "1", "5", "6", "3", "6", "4"};
 
-    private static List<Exam_Seating_Plan> examSeatingPlanList = new ArrayList<>();
+    private static List<Object> examSeatingPlanList = new ArrayList<>();
 
-    public static List<Exam_Seating_Plan> getExamSeatingPlanData() {
+    public static List<Object> getExamSeatingPlanData() {
 
         examSeatingPlanList.clear();
+        examSeatingPlanList.add(new Note_Model("0"));
         for(int x=0;x<10;x++)
         {
 
