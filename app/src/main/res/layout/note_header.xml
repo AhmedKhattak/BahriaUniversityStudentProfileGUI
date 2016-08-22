@@ -4,15 +4,19 @@
     android:id="@+id/notecard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="2dp"
+    app:cardBackgroundColor="@color/primary"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:padding="16dp">
+        android:layout_margin="16dp"
+       >
 
         <TextView
             android:id="@+id/note"
