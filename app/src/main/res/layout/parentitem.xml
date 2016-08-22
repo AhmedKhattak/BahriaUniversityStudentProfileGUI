@@ -1,112 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?><!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="90dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp"
-    android:minHeight="60dp"
-    card_view:cardUseCompatPadding="false"
-    android:background="?attr/selectableItemBackground"
-    >
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="2dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">-->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/attendencecard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="1dp"
+    android:minHeight="100dp"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-       >
-        <TextView
-            android:id="@+id/semester_text"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:height="20dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:maxLines="1"
-            android:paddingTop="1dp"
-            android:scrollHorizontally="true"
-            android:text="@string/semester"
-            android:textStyle="bold"
-            android:layout_margin="16dp"
+        android:orientation="vertical">
 
-            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/semesterval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/semester_text"
-            android:height="20dp"
-            android:ellipsize="end"
-            android:gravity="left"
-            android:maxLines="1"
-            android:paddingTop="1dp"
-            android:scrollHorizontally="true"
-            android:text="@string/emptytext"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="-16dp"
-            />
+            <TextView
+                android:id="@+id/semesterval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:height="20dp"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:text="@string/emptytext"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/gpa"
-            android:layout_width="47.4dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/semesterval"
-            android:gravity="center"
-            android:text="@string/gpa"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            />
+            <TextView
+                android:id="@+id/gpa"
+                android:layout_width="47.4dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/semesterval"
+                android:gravity="left"
+                android:text="@string/gpa"
+                android:textStyle="bold"
 
-        <TextView
-            android:id="@+id/gpaval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/semesterval"
-            android:layout_marginLeft="2dp"
-            android:layout_toRightOf="@id/gpa"
-            android:ellipsize="end"
-            android:gravity="left"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:text="@string/emptytext" />
+                />
 
-        <TextView
-            android:id="@+id/cgpa"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/semesterval"
-            android:layout_toLeftOf="@+id/cgpaval"
-            android:gravity="center"
-            android:paddingRight="2dp"
-            android:text="@string/cgpa"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/gpaval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/semesterval"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_toRightOf="@id/gpa"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:text="@string/emptytext" />
 
-        <TextView
-            android:id="@+id/cgpaval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/semesterval"
-            android:layout_marginRight="16dp"
-            android:ellipsize="end"
-            android:gravity="left"
-            android:maxLines="1"
-            android:text="@string/emptytext" />
+            <TextView
+                android:id="@+id/cgpa"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/semesterval"
+                android:layout_toLeftOf="@+id/cgpaval"
+                android:gravity="center"
+                android:paddingRight="2dp"
+                android:text="@string/cgpa"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cgpaval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/semesterval"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="1"
+                android:text="@string/emptytext" />
+
+
+        </RelativeLayout>
 
         <com.example.ahmed.redux.widget.ExpandableItemIndicator
+            android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_centerHorizontal="true"
-            android:id="@+id/indicator"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="5dp"/>
 
-    </RelativeLayout>
+    </LinearLayout>
+
+
 </android.support.v7.widget.CardView>
 
 
