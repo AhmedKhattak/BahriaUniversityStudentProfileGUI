@@ -6,9 +6,12 @@
     android:id="@+id/attendencecard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="1dp"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
 
 
     <LinearLayout
@@ -29,6 +32,7 @@
                 android:layout_toRightOf="@+id/course"
                 android:text="course"
                 android:textSize="18sp"
+                android:layout_marginBottom="10dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
