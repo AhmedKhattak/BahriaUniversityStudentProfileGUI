@@ -2,6 +2,7 @@ package com.example.ahmed.redux;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,6 +21,8 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.ahmed.redux.Activities.FeedBackActivity;
 import com.example.ahmed.redux.Activities.ProfileActivity;
 import com.example.ahmed.redux.Activities.settings;
 import com.example.ahmed.redux.Adapters.NavDrawerAdapter;
@@ -39,6 +42,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialize.Materialize;
 
 
 import java.util.ArrayList;
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
     String NAME = "Ahmed Khattak";
     String ENROLL = "01-134132-016";
     int PROFILE = R.drawable.aka;
+    //String appPackageName = getPackageName();
 
     /* RecyclerView mRecyclerView;                           // Declaring RecyclerView
      NavDrawerAdapter mAdapter;                        // Declaring Adapter For Recycler View
@@ -120,16 +125,14 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
 
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(FontAwesome.Icon.faw_user);
-        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(FontAwesome.Icon.faw_bell);
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(FontAwesome.Icon.faw_list);
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(FontAwesome.Icon.faw_pencil);
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(FontAwesome.Icon.faw_cog);
-        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(FontAwesome.Icon.faw_bullhorn);
-        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(FontAwesome.Icon.faw_commenting);
-        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Privacy Policy").withIcon(FontAwesome.Icon.faw_user_secret);
-        PrimaryDrawerItem item9 = new PrimaryDrawerItem().withIdentifier(1).withName("Change Password").withIcon(FontAwesome.Icon.faw_key);
-        PrimaryDrawerItem item10 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(FontAwesome.Icon.faw_sign_out);
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(CommunityMaterial.Icon.cmd_account);
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(CommunityMaterial.Icon.cmd_bell_ring);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(CommunityMaterial.Icon.cmd_format_list_bulleted);
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(CommunityMaterial.Icon.cmd_border_color);
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(CommunityMaterial.Icon.cmd_settings);
+        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(CommunityMaterial.Icon.cmd_bullhorn);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(CommunityMaterial.Icon.cmd_comment_processing);
+        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(CommunityMaterial.Icon.cmd_logout_variant);
 
         //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -143,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                         new DividerDrawerItem(),
                         item5,
                         item6,
-                        item7, item8, item9,item10
+                        item7, item8
                 )
                 .withAccountHeader(headerResult)
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -181,11 +184,17 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                         }
                         else if(position==7)
                         {
-
+                             // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +"com.bu.innovate.bustudentportal" )));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" +"com.bu.innovate.bustudentportal" )));
+                            }
                         }
                         else if(position==8)
                         {
-
+                            Intent i = new Intent(MainActivity.this, FeedBackActivity.class);
+                            startActivity(i);
                         }
                         else if(position==9)
                         {
@@ -223,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
                 Intent i = new Intent(this, settings.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
                 return true;
 
 
