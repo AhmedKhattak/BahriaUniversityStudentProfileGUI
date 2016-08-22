@@ -4,12 +4,13 @@
     android:id="@+id/attendencecard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="1dp"
     app:cardCornerRadius="2dp"
     android:background="@color/white"
-    app:cardPreventCornerOverlap="true">
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
 
 
     <RelativeLayout
@@ -33,7 +34,7 @@
 
         <TextView
             android:id="@+id/teacher"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/coursevala"
             android:text="Teacher"
@@ -47,7 +48,8 @@
             android:layout_below="@+id/coursevala"
             android:layout_toLeftOf="@+id/youhave"
             android:layout_toRightOf="@+id/present"
-            android:text="AFNAN SADDIQUE" />
+            android:text="AFNAN SADDIQUE"
+            android:layout_marginBottom="4dp"/>
 
         <TextView
             android:id="@+id/conducted"
@@ -65,7 +67,8 @@
             android:layout_below="@+id/teacherval"
             android:layout_toLeftOf="@+id/youhave"
             android:layout_toRightOf="@+id/conducted"
-            android:text="32" />
+            android:text="32"
+            android:layout_marginBottom="4dp"/>
 
         <TextView
             android:id="@+id/present"
@@ -84,7 +87,8 @@
             android:layout_below="@+id/conductedval"
             android:layout_toLeftOf="@+id/youhave"
             android:layout_toRightOf="@+id/present"
-            android:text="30 (93.75%)" />
+            android:text="30 (93.75%)"
+            android:layout_marginBottom="4dp"/>
 
 
         <TextView
@@ -104,7 +108,8 @@
             android:layout_below="@+id/presentval"
             android:layout_toLeftOf="@+id/youhave"
             android:layout_toRightOf="@+id/present"
-            android:text="2" />
+            android:text="2"
+            android:layout_marginBottom="4dp"/>
 
 
         <TextView
