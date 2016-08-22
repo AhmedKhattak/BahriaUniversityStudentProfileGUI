@@ -22,59 +22,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-                android:background="@color/primary">
-               <TextView
-                   android:id="@+id/mainhead"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="BU Student Portal for \nAndroid"
-                   android:textColor="@color/white"
-                   android:textSize="25sp"/>
-                ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_splash2" />
-                <TextView
-                    android:id="@+id/version"
-                    android:layout_marginTop="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Version"
-                    android:textColor="#9fa8da"
-                    android:textSize="14sp"
-                    android:layout_below="@+id/mainhead"/>
-                <TextView
-                    android:id="@+id/versionval"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.1.9"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_below="@+id/version"/>
-
-                <TextView
-                    android:id="@+id/description"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:text="BU Student Portal for Android is built using open source software : licences"
-                    android:textColor="#9fa8da"
-                    android:textSize="16sp"
-                    android:layout_below="@+id/versionval"/>
-
+                >
                 <ImageView
                     android:id="@+id/applogo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:src="@drawable/ic_splash2"
-                    android:layout_below="@+id/description"/>
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                  />
+
+                <TextView
+                    android:id="@+id/appdescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/applogo"
+                    android:text="@string/appdescription"/>
 
                 <TextView
                     android:id="@+id/sax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:text="© 2015 Innovate&#8482; All Rights Reserved."
+                    android:text="© 2016 Innovate&#8482; All Rights Reserved."
                     android:textColor="#9fa8da"
                     android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
