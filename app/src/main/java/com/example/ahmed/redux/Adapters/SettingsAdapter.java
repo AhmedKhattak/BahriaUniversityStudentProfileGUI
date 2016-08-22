@@ -16,6 +16,7 @@ import com.example.ahmed.redux.Models.Settings_Model_Checkbox;
 import com.example.ahmed.redux.Models.Settings_Model_Default;
 import com.example.ahmed.redux.Models.Settings_Model_Switch;
 import com.example.ahmed.redux.R;
+import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -93,33 +94,35 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 vh1.summary.setText(settings_model_default.getSummary());
                 if (settings_model_default.getHeader() == "Change Log") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_file_text)
+                            .icon(CommunityMaterial.Icon.cmd_note_text)
                             .color(color)
                             .sizeDp(24));
                 } else if (settings_model_default.getHeader() == "Background Sync") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_refresh)
+                            .icon(CommunityMaterial.Icon.cmd_refresh)
                             .color(color)
                             .sizeDp(24));
                     //ider summary change karni
-                } /*else if (settings_model_default.getHeader() == "File Save Location") {
+                }
+                else if (settings_model_default.getHeader() == "Privacy Policy") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_floppy_o)
-                            .color(color)
-                            .sizeDp(24));
-                }*/ else if (settings_model_default.getHeader() == "Privacy Policy") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_user_secret)
+                            .icon(CommunityMaterial.Icon.cmd_shield)
                             .color(color)
                             .sizeDp(24));
                 } else if (settings_model_default.getHeader() == "Open Source") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_gavel)
+                            .icon(CommunityMaterial.Icon.cmd_gavel)
                             .color(color)
                             .sizeDp(24));
                 } else if (settings_model_default.getHeader() == "Build Version") {
                     vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_android)
+                            .icon(CommunityMaterial.Icon.cmd_android)
+                            .color(color)
+                            .sizeDp(24));
+                }else if(settings_model_default.getHeader()=="About")
+                {
+                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
+                            .icon(CommunityMaterial.Icon.cmd_information)
                             .color(color)
                             .sizeDp(24));
                 }
@@ -150,7 +153,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 vh3.summary.setText(settings_model_switch.getSummary());
                 if (settings_model_switch.getHeader() == "Notifications") {
                     vh3.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(FontAwesome.Icon.faw_bell)
+                            .icon(CommunityMaterial.Icon.cmd_bell_ring)
                             .color(color)
                             .sizeDp(24));
                     //ider summary badalni
