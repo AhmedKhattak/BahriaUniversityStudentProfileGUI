@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Redux</string>
+    <string name="app_name">BU Student Profile</string>
     <string name="semester">SEMESTER : </string>
     <string name="cgpa">CGPA : </string>
     <string name="gpa">   GPA : </string>
