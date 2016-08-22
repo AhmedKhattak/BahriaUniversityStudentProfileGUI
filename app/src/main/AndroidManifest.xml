@@ -69,6 +69,15 @@
                 android:value=".MainActivity"/>
         </activity>
 
+        <activity android:name=".Activities.FeedBackActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyMaterialThemezzz">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+
 
     </application>
 
