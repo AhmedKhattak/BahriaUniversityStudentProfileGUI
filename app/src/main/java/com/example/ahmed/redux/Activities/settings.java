@@ -35,7 +35,7 @@ import com.example.ahmed.redux.R;
 
 import java.io.File;
 
-public class settings extends AppCompatActivity implements  SettingsAdapter.ClickListener {
+public class settings extends AppCompatActivity implements SettingsAdapter.ClickListener {
     private Handler mHandler = new Handler();
     private Runnable mUpdateTimeTask;
     private RecyclerView recyclerView;
@@ -55,7 +55,6 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
         mLayoutManager = null;
 
     }
-
 
 
     @Override
@@ -146,20 +145,9 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
                         })
                         .positiveText("Set")
                         .show();
-            } /*else if (settings_view_default.heading.getText() == "File Save Location") {
-                new FolderChooserDialog.Builder(this)
-                        .chooseButton(R.string.md_choose_label)  // changes label of the choose button
-                        .initialPath("/sdcard/Download")  // changes initial path, defaults to external storage directory
-                        .tag("optional-identifier")
-                        .show();
-                Toast.makeText(this, "File Save Location", Toast.LENGTH_SHORT).show();
-            } */ else if (settings_view_default.heading.getText() == "Privacy Policy") {
-               /* new MaterialDialog.Builder(this)
-                        .title("Privacy Policy")
-                        .customView(R.layout.privacypolicy, false)
-                        .positiveText("Accept")
-                        .show();*/
-                Intent i = new Intent(this, AboutActivity.class);
+            } else if (settings_view_default.heading.getText() == "Privacy Policy") {
+
+                Intent i = new Intent(this, privacypolicy.class);
                 startActivity(i);
                 //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Open Source") {
@@ -168,6 +156,9 @@ public class settings extends AppCompatActivity implements  SettingsAdapter.Clic
                 //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Build Version") {
                 //nothing pata nae shaid kuch daldon aween me
+            } else if (settings_view_default.heading.getText() == "About") {
+                Intent i = new Intent(this, AboutActivity.class);
+                startActivity(i);
             }
         }
     }
