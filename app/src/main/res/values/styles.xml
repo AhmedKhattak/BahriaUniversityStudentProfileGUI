@@ -19,7 +19,7 @@
     </style>
 
     <style name="MyMaterialThemezzz" parent="MyMaterialTheme.Base">
-
+        <item name="android:windowBackground">@color/googlebackground</item>
     </style>
 
 </resources>
