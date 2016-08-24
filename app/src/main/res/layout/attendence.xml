@@ -129,7 +129,7 @@
             android:layout_below="@+id/youhave"
             android:paddingRight="25dp"
             android:text="5"
-            android:textColor="@color/primary"
+            android:textColor="@color/accent"
             android:textSize="18sp"
             android:textStyle="bold"
             />

@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(R.drawable.ic_account_grey600_24dp);
-        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(R.drawable.ic_bell_ring_grey600_24dp);
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.accent)).withIcon(R.drawable.ic_bell_ring_grey600_24dp);
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(R.drawable.ic_format_list_bulleted_grey600_24dp);
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(R.drawable.ic_pen_grey600_24dp);
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(R.drawable.ic_settings_grey600_24dp);
