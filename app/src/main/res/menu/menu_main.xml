@@ -8,12 +8,12 @@
         android:title="Menu"
         All4One:showAsAction="always"/>
     <item android:id="@+id/overflow"
-    android:icon="@drawable/ic_more_vert_white_24dp"
+    android:icon="@drawable/ic_dots_vertical_white_24dp"
     android:title="Menu"
     All4One:showAsAction="always">
     <menu>
         <item android:id="@+id/settings"
-        android:icon="@drawable/ic_settings_black_24dp"
+        android:icon="@drawable/ic_settings_grey600_24dp"
         android:title="Settings"/>
 
     </menu>

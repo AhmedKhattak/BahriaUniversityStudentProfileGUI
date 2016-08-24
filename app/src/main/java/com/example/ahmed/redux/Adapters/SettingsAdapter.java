@@ -16,8 +16,6 @@ import com.example.ahmed.redux.Models.Settings_Model_Checkbox;
 import com.example.ahmed.redux.Models.Settings_Model_Default;
 import com.example.ahmed.redux.Models.Settings_Model_Switch;
 import com.example.ahmed.redux.R;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
 import java.util.List;
@@ -93,38 +91,19 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 vh1.heading.setText(settings_model_default.getHeader());
                 vh1.summary.setText(settings_model_default.getSummary());
                 if (settings_model_default.getHeader() == "Change Log") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_note_text)
-                            .color(color)
-                            .sizeDp(24));
+                    vh1.imageView.setImageResource(R.drawable.ic_note_text_grey600_24dp);
                 } else if (settings_model_default.getHeader() == "Background Sync") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_refresh)
-                            .color(color)
-                            .sizeDp(24));
-                    //ider summary change karni
+                    vh1.imageView.setImageResource(R.drawable.ic_sync_grey600_24dp);
                 }
                 else if (settings_model_default.getHeader() == "Privacy Policy") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_shield)
-                            .color(color)
-                            .sizeDp(24));
+                    vh1.imageView.setImageResource(R.drawable.ic_shield_grey600_24dp);
                 } else if (settings_model_default.getHeader() == "Open Source") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_gavel)
-                            .color(color)
-                            .sizeDp(24));
+                    vh1.imageView.setImageResource(R.drawable.ic_gavel_grey600_24dp);
                 } else if (settings_model_default.getHeader() == "Build Version") {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_android)
-                            .color(color)
-                            .sizeDp(24));
+                    vh1.imageView.setImageResource(R.drawable.ic_android_studio_grey600_24dp);
                 }else if(settings_model_default.getHeader()=="About")
                 {
-                    vh1.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_information)
-                            .color(color)
-                            .sizeDp(24));
+                    vh1.imageView.setImageResource(R.drawable.ic_information_grey600_24dp);
                 }
                 break;
             case CHECKBOX:
@@ -152,10 +131,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 vh3.heading.setText(settings_model_switch.getHeader());
                 vh3.summary.setText(settings_model_switch.getSummary());
                 if (settings_model_switch.getHeader() == "Notifications") {
-                    vh3.imageView.setImageDrawable(new IconicsDrawable(context)
-                            .icon(CommunityMaterial.Icon.cmd_bell_ring)
-                            .color(color)
-                            .sizeDp(24));
+                    vh3.imageView.setImageResource(R.drawable.ic_bell_ring_grey600_24dp);
                     //ider summary badalni
                 }
                 break;

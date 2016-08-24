@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +31,6 @@ import com.example.ahmed.redux.Fragments.Fragment1;
 import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
 import com.example.ahmed.redux.Providers.NavDrawerItemProvider;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -124,14 +122,14 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
 
 
         //if you want to update the items at a later time it is recommended to keep it in a variable
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(CommunityMaterial.Icon.cmd_account);
-        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(CommunityMaterial.Icon.cmd_bell_ring);
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(CommunityMaterial.Icon.cmd_format_list_bulleted);
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(CommunityMaterial.Icon.cmd_border_color);
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(CommunityMaterial.Icon.cmd_settings);
-        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(CommunityMaterial.Icon.cmd_bullhorn);
-        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(CommunityMaterial.Icon.cmd_comment_processing);
-        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(CommunityMaterial.Icon.cmd_logout_variant);
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Profile").withIcon(R.drawable.ic_account_grey600_24dp);
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(1).withName("Notifications").withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.primary)).withIcon(R.drawable.ic_bell_ring_grey600_24dp);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(1).withName("Evaluation").withIcon(R.drawable.ic_format_list_bulleted_grey600_24dp);
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(1).withName("Registration").withIcon(R.drawable.ic_pen_grey600_24dp);
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(R.drawable.ic_settings_grey600_24dp);
+        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(R.drawable.ic_bullhorn_grey600_24dp);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(R.drawable.ic_comment_text_grey600_24dp);
+        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(R.drawable.ic_logout_grey600_24dp);
 
         //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -256,19 +254,15 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
 
     private void setupTabIcons() {
 
-        tabLayout.getTabAt(0).setIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_account_check)
-                .color(Color.WHITE)
-                .sizeDp(21));
-        tabLayout.getTabAt(1).setIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_calendar_clock)
-                .color(Color.WHITE)
-                .sizeDp(21));
-        tabLayout.getTabAt(2).setIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_format_list_bulleted_type)
-                .color(Color.WHITE)
-                .sizeDp(21));
-
+        try {
+            tabLayout.getTabAt(0).setIcon(R.drawable.ic_account_check_white_24dp);
+            tabLayout.getTabAt(1).setIcon(R.drawable.ic_calendar_clock_white_24dp);
+            tabLayout.getTabAt(2).setIcon(R.drawable.ic_format_list_bulleted_type_white_24dp);
+        }
+        catch (NullPointerException x)
+        {
+            Log.d("Fuck",x.getMessage());
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {

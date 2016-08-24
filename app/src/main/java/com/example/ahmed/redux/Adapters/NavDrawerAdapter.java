@@ -13,7 +13,6 @@ import com.example.ahmed.redux.Interfaces.Comm;
 import com.example.ahmed.redux.Models.NavItems_Header_Model;
 import com.example.ahmed.redux.Models.NavItems_Model;
 import com.example.ahmed.redux.R;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
 import java.util.List;
@@ -69,64 +68,62 @@ public class NavDrawerAdapter extends RecyclerView.Adapter<NavDrawerAdapter.View
             NavItems_Model navItems_model =(NavItems_Model) navItemsModelList.get(position);
             holder.textView.setText(navItems_model.getId());
             if (navItems_model.getId() == "Profile") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
-                        .icon(FontAwesome.Icon.faw_user)
-                        .color(color)
-                        .sizeDp(size));
+                holder.imageView.setImageResource(R.drawable.ic_account_grey600_24dp);
 
             } else if (navItems_model.getId() == "Evaluation") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+               /* holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_refresh)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
+                holder.imageView.setImageResource(R.drawable.ic_account_grey600_24dp);
 
             } else if (navItems_model.getId() == "Registration") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+              /*  holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_pencil_square)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Change Password") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+              /*  holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_key)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Notifications") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+              /*  holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_bell)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Settings") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+               /* holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_cog)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Feedback") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+              /*  holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_commenting)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Rate Us !") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+              /*  holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_bullhorn)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
 
             } else if (navItems_model.getId() == "Privacy Policy") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+                /*holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_user_secret)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
             }
             else if (navItems_model.getId() == "Logout") {
-                holder.imageView.setImageDrawable(new IconicsDrawable(context)
+               /* holder.imageView.setImageDrawable(new IconicsDrawable(context)
                         .icon(FontAwesome.Icon.faw_sign_out)
                         .color(color)
-                        .sizeDp(size));
+                        .sizeDp(size));*/
             }
         } else {
 
