@@ -16,7 +16,6 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <FrameLayout
-        android:background="@color/white"
         android:layout_below="@+id/toolbarr"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -27,7 +26,6 @@
             android:layout_height="match_parent"
             android:scrollbars="none"
             android:clipToPadding="false"
-            android:background="@color/white"
             >
             <LinearLayout
                 android:orientation="vertical"

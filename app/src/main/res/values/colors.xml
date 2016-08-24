@@ -15,4 +15,5 @@
     <color name="divider">#B6B6B6</color>
     <color name="windowBackground">#fff</color>
     <color name="white">#fff</color>
+    <color name="googlebackground">#f5f5f5</color>
 </resources>
