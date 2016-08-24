@@ -35,7 +35,7 @@ public class Fragment3 extends Fragment{
         mLayoutManager = new LinearLayoutManager(getContext()){
             @Override
             protected int getExtraLayoutSpace(RecyclerView.State state) {
-                return 4000;
+                return 3000;
             }
         };
         recyclerView.setLayoutManager(mLayoutManager);
