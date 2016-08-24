@@ -75,11 +75,10 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setOffscreenPageLimit(2);
-        setupViewPager(viewPager);
+        viewPager.setOffscreenPageLimit(3);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
+
        /* mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mAdapter = new NavDrawerAdapter(this, NavDrawerItemProvider.getExamSeatingPlanData(),getResources().getColor(R.color.secondary_text));
@@ -322,5 +321,13 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         public CharSequence getPageTitle(int position) {
             return null;
         }
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupViewPager(viewPager);
+        setupTabIcons();
     }
 }
