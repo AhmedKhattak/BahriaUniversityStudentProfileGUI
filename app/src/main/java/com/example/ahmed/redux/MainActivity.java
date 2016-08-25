@@ -3,6 +3,7 @@ package com.example.ahmed.redux;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -73,9 +74,11 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(2);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        setupViewPager(viewPager);
+        setupTabIcons();
 
        /* mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -321,7 +324,13 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
     @Override
     protected void onResume() {
         super.onResume();
-        setupViewPager(viewPager);
-        setupTabIcons();
+    }
+
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+
     }
 }
