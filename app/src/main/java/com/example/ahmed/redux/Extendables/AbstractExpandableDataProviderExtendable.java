@@ -4,7 +4,7 @@ package com.example.ahmed.redux.Extendables;
  * this must be used in advanced recycler layout expandable stuff
  */
 
-public abstract class AbstractExpandableDataProvider_Extendable {
+public abstract class AbstractExpandableDataProviderExtendable {
     public static abstract class BaseData {
 
         public abstract String getText();

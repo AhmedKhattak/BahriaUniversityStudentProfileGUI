@@ -4,7 +4,7 @@
     package="com.example.ahmed.redux">
 
     <application
-        android:name=".Application.application"
+        android:name=".Application.ApplicationGlobal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +15,9 @@
             android:name=".MainActivity"
             android:hardwareAccelerated="true"
             android:launchMode="standard"
-            android:theme="@style/MyMaterialTheme.launchersplash">
+            android:theme="@style/MyMaterialTheme.launchersplash"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +25,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.settings"
+            android:name=".Activities.SettingsActivity"
             android:parentActivityName=".MainActivity"
-
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
 
             <meta-data
@@ -34,35 +37,43 @@
         </activity>
 
         <activity
-            android:name=".Activities.privacypolicy"
-            android:parentActivityName=".Activities.settings"
+            android:name=".Activities.PrivacyPolicyActivity"
+            android:parentActivityName=".Activities.SettingsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.settings" />
+                android:value=".Activities.SettingsActivity" />
         </activity>
 
 
-        <activity android:name=".Activities.opensource"
-            android:parentActivityName=".Activities.settings"
+        <activity android:name=".Activities.OpenSourceActivity"
+            android:parentActivityName=".Activities.SettingsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.settings"/>
+                android:value=".Activities.SettingsActivity"/>
         </activity>
 
 
 
         <activity android:name=".Activities.AboutActivity"
-            android:parentActivityName=".Activities.settings"
+            android:parentActivityName=".Activities.SettingsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.settings"/>
+                android:value=".Activities.SettingsActivity"/>
         </activity>
 
         <activity android:name=".Activities.ProfileActivity"
             android:parentActivityName=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -71,6 +82,8 @@
 
         <activity android:name=".Activities.FeedBackActivity"
             android:parentActivityName=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/MyMaterialThemezzz">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
