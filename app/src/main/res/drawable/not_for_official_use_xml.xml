@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<bitmap android:src="@drawable/notforofficialuse"
+<bitmap android:src="@drawable/not_for_official_use_img"
     android:tileMode="repeat"
     android:gravity="fill"
     xmlns:android="http://schemas.android.com/apk/res/android">

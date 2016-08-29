@@ -12,22 +12,19 @@ import com.example.ahmed.redux.R;
 /**
  * Created by Khattak on 7/30/2016.
  */
-public class privacypolicy  extends AppCompatActivity {
-
-
+public class OpenSourceActivity extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.privacypolicy);
+        setContentView(R.layout.activity_opensource);
         toolbar = (Toolbar) findViewById(R.id.toolbarr);
-        toolbar.setTitle("Privacy Policy");
+        toolbar.setTitle("Open Source Licenses");
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -42,8 +39,8 @@ public class privacypolicy  extends AppCompatActivity {
             case android.R.id.home:
                 Log.d("Fuck", "sht");
                 finish();
-                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
-            break;
+                //overridePendingTransition(R.anim.Animation_2,android.R.anim.fade_out);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -55,6 +52,6 @@ public class privacypolicy  extends AppCompatActivity {
     public void onBackPressed() {
         Log.d("Fuck", "sht");
         finish();
-        //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+        //overridePendingTransition(R.anim.Animation_2,android.R.anim.fade_out);
     }
 }

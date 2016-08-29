@@ -2,40 +2,22 @@ package com.example.ahmed.redux.Activities;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.folderselector.FolderChooserDialog;
 import com.example.ahmed.redux.Adapters.SettingsAdapter;
-import com.example.ahmed.redux.Fragments.FragmentOpenSource;
-import com.example.ahmed.redux.Fragments.FragmentPrivacyPolicy;
-import com.example.ahmed.redux.Fragments.FragmentSettings;
-import com.example.ahmed.redux.Interfaces.Comm;
-import com.example.ahmed.redux.Models.Settings_Model_Default;
-import com.example.ahmed.redux.Models.Settings_Model_Switch;
 import com.example.ahmed.redux.Providers.Settings_Provider;
 import com.example.ahmed.redux.R;
 
-import java.io.File;
-
-public class settings extends AppCompatActivity implements SettingsAdapter.ClickListener {
+public class SettingsActivity extends AppCompatActivity implements SettingsAdapter.ClickListener {
     private Handler mHandler = new Handler();
     private Runnable mUpdateTimeTask;
     private RecyclerView recyclerView;
@@ -147,15 +129,15 @@ public class settings extends AppCompatActivity implements SettingsAdapter.Click
                         .show();
             } else if (settings_view_default.heading.getText() == "Privacy Policy") {
 
-                Intent i = new Intent(this, privacypolicy.class);
+                Intent i = new Intent(this, PrivacyPolicyActivity.class);
                 startActivity(i);
-                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.Animation_2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Open Source") {
-                Intent i = new Intent(this, opensource.class);
+                Intent i = new Intent(this, OpenSourceActivity.class);
                 startActivity(i);
-                //overridePendingTransition(R.anim.test2,android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.Animation_2,android.R.anim.fade_out);
             } else if (settings_view_default.heading.getText() == "Build Version") {
-                //nothing pata nae shaid kuch daldon aween me
+                //NothingAnim pata nae shaid kuch daldon aween me
             } else if (settings_view_default.heading.getText() == "About") {
                 Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
@@ -170,7 +152,7 @@ public class settings extends AppCompatActivity implements SettingsAdapter.Click
             case android.R.id.home:
                 Log.d("Fuck", "sht");
                 finish();
-                //overridePendingTransition(R.anim.nothing,R.anim.test4);
+                //overridePendingTransition(R.anim.NothingAnim,R.anim.Animation_4);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -183,7 +165,7 @@ public class settings extends AppCompatActivity implements SettingsAdapter.Click
     public void onBackPressed() {
         Log.d("Fuck", "sht");
         finish();
-        //overridePendingTransition(R.anim.nothing,R.anim.test4);
+        //overridePendingTransition(R.anim.NothingAnim,R.anim.Animation_4);
     }
 
 
