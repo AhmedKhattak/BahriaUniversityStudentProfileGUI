@@ -1,11 +1,11 @@
 package com.example.ahmed.redux.Models;
 
-import com.example.ahmed.redux.Extendables.AbstractExpandableDataProvider_Extendable;
+import com.example.ahmed.redux.Extendables.AbstractExpandableDataProviderExtendable;
 
 /**
  * Created by Ahmed on 6/29/2016.
  */
-public class ParentData_Model extends AbstractExpandableDataProvider_Extendable.GroupData {
+public class ParentData_Model extends AbstractExpandableDataProviderExtendable.GroupData {
     private static final String TAG = "ParentData_Model";
     private String semester;
     private String gpa;
@@ -65,7 +65,7 @@ public class ParentData_Model extends AbstractExpandableDataProvider_Extendable.
 
     @Override
     public String getText() {
-        return "fuck";
+        return "NotForOfficialUse_XML";
     }
 
     @Override

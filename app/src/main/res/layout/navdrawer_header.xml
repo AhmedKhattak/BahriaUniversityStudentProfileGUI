@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="172dp"
-    android:background="@drawable/w1"
+    android:background="@drawable/nav_drawer_header_image"
     android:orientation="vertical"
     android:weightSum="1"
     android:layout_marginBottom="8dp">
@@ -45,7 +45,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/aka"
+        android:src="@drawable/test_account_pic"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="38dp"
         android:id="@+id/userimage"
