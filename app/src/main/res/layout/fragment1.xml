@@ -8,7 +8,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fuck"
+        android:background="@drawable/not_for_official_use_xml"
         android:paddingTop="8dp"
         android:paddingBottom="16dp"
         android:clipToPadding="false">

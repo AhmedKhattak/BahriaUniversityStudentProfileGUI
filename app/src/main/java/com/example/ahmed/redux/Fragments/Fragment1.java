@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ahmed.redux.Adapters.MainAdapter;
-import com.example.ahmed.redux.Jugarr.DividerItemDecoration;
+
 import com.example.ahmed.redux.Providers.SampleDataProviderExtendable;
 import com.example.ahmed.redux.R;
 import com.h6ah4i.android.widget.advrecyclerview.animator.GeneralItemAnimator;
@@ -69,7 +69,7 @@ public class Fragment1 extends Fragment  implements RecyclerViewExpandableItemMa
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mWrappedAdapter);  // requires *wrapped* adapter
         mRecyclerView.setItemAnimator(animator);
-        //mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), R.drawable.dividerfuck));
+
         mRecyclerView.setHasFixedSize(false);
         mRecyclerViewExpandableItemManager.attachRecyclerView(mRecyclerView);
     }
@@ -122,7 +122,7 @@ public class Fragment1 extends Fragment  implements RecyclerViewExpandableItemMa
         if (fromUser) {
            // adjustScrollPositionOnGroupExpanded(groupPosition);
         }
-        Log.d("fuck","ongroupexpandcalled");
+        Log.d("NotForOfficialUse_XML","ongroupexpandcalled");
     }
 
     private void adjustScrollPositionOnGroupExpanded(int groupPosition) {

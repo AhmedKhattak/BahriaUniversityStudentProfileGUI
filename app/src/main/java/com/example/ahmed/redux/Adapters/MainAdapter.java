@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import com.example.ahmed.redux.Jugarr.JugarFrameLayout;
 import com.example.ahmed.redux.Providers.SampleDataProviderExtendable;
 import com.example.ahmed.redux.R;
 import com.example.ahmed.redux.widget.ExpandableItemIndicator;
@@ -157,7 +155,6 @@ public class MainAdapter extends AbstractExpandableItemAdapter<MainAdapter.Paren
 
         public ChildView(View itemView) {
             super(itemView);
-            //frameLayout= (JugarFrameLayout) itemView.findViewById(R.id.frame_child);
             course = (TextView) itemView.findViewById(R.id.coursevalc);
             grade = (TextView) itemView.findViewById(R.id.gradeval);
         }

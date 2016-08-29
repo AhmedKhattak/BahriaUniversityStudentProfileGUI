@@ -9,12 +9,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -23,15 +19,13 @@ import android.view.View;
 import android.widget.Toast;
 
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.ahmed.redux.Activities.FeedBackActivity;
 import com.example.ahmed.redux.Activities.ProfileActivity;
-import com.example.ahmed.redux.Activities.settings;
+import com.example.ahmed.redux.Activities.SettingsActivity;
 import com.example.ahmed.redux.Adapters.NavDrawerAdapter;
 import com.example.ahmed.redux.Fragments.Fragment1;
 import com.example.ahmed.redux.Fragments.Fragment2;
 import com.example.ahmed.redux.Fragments.Fragment3;
-import com.example.ahmed.redux.Providers.NavDrawerItemProvider;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -41,7 +35,6 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialize.Materialize;
 
 
 import java.util.ArrayList;
@@ -53,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
     private ViewPager viewPager;
     String NAME = "Ahmed Khattak";
     String ENROLL = "01-134132-016";
-    int PROFILE = R.drawable.aka;
+    int PROFILE = R.drawable.test_account_pic;
     //String appPackageName = getPackageName();
 
     /* RecyclerView mRecyclerView;                           // Declaring RecyclerView
@@ -116,9 +109,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withSelectionListEnabledForSingleProfile(false)
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.w1)
+                .withHeaderBackground(R.drawable.nav_drawer_header_image)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Ahmed Khattak").withEmail("01-134132-016").withIcon(getResources().getDrawable(R.drawable.aka))
+                        new ProfileDrawerItem().withName("Ahmed Khattak").withEmail("01-134132-016").withIcon(getResources().getDrawable(R.drawable.test_account_pic))
 
                 ).withAlternativeProfileHeaderSwitching(false)
                 .build();
@@ -158,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                             // User chose the "tabdownload" action open modal or something
                             Intent j = new Intent(MainActivity.this, ProfileActivity.class);
                             startActivity(j);
-                            //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                            //overridePendingTransition(R.anim.Animation_3, android.R.anim.fade_out);
                         }
                         else if(position==2)
                         {
@@ -178,9 +171,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                         }
                         else if(position==6)
                         {
-                            Intent i = new Intent(MainActivity.this, settings.class);
+                            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
                             startActivity(i);
-                            //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                            //overridePendingTransition(R.anim.Animation_3, android.R.anim.fade_out);
                         }
                         else if(position==7)
                         {
@@ -220,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -230,9 +223,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         switch (item.getItemId()) {
             case R.id.settings:
                 /*Toast.makeText(this, "Settings clicked !", Toast.LENGTH_SHORT).show();*/
-                Intent i = new Intent(this, settings.class);
+                Intent i = new Intent(this, SettingsActivity.class);
                 startActivity(i);
-                //overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+                //overridePendingTransition(R.anim.Animation_3, android.R.anim.fade_out);
                 return true;
 
 
@@ -282,11 +275,11 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
             // User chose the "tabdownload" action open modal or something
             Intent j = new Intent(this, ProfileActivity.class);
             startActivity(j);
-            overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+            overridePendingTransition(R.anim.animation_3, android.R.anim.fade_out);
         } else if (position == 6) {
-            Intent i = new Intent(this, settings.class);
+            Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
-            overridePendingTransition(R.anim.test3, android.R.anim.fade_out);
+            overridePendingTransition(R.anim.animation_3, android.R.anim.fade_out);
         }
     }
 
