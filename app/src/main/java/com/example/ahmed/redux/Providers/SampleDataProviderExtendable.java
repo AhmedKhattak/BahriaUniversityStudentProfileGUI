@@ -2,7 +2,7 @@ package com.example.ahmed.redux.Providers;
 
 import android.support.v4.util.Pair;
 
-import com.example.ahmed.redux.Extendables.AbstractExpandableDataProvider_Extendable;
+import com.example.ahmed.redux.Extendables.AbstractExpandableDataProviderExtendable;
 import com.example.ahmed.redux.Models.ChildData_Model;
 import com.example.ahmed.redux.Models.ParentData_Model;
 import com.h6ah4i.android.widget.advrecyclerview.expandable.RecyclerViewExpandableItemManager;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Ahmed on 6/29/2016.
  */
-public class SampleDataProviderExtendable extends AbstractExpandableDataProvider_Extendable {
+public class SampleDataProviderExtendable extends AbstractExpandableDataProviderExtendable {
 
     //region initializations
 
@@ -49,7 +49,7 @@ public class SampleDataProviderExtendable extends AbstractExpandableDataProvider
             final String cgpa = Fuck[2];
             final ParentData_Model parentData_model = new ParentData_Model(parentId, semester, gpa, cgpa);
             final List<ChildData_Model> children = new ArrayList<>();
-            for (int y = 0; y < Duck.length; y++) //increase length to increase children count loop is redundant but its here anyways fuck you here there is only one child of each parent
+            for (int y = 0; y < Duck.length; y++) //increase length to increase children count loop is redundant but its here anyways NotForOfficialUse_XML you here there is only one child of each parent
             {
                 final long childId = parentData_model.generateNewChildId();
 
