@@ -1,13 +1,19 @@
 package com.example.ahmed.redux.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 
 import com.example.ahmed.redux.Models.Attendence;
+import com.example.ahmed.redux.Providers.AttendenceProvider;
 import com.example.ahmed.redux.R;
+import com.example.ahmed.redux.Utils.utility;
+import com.mikepenz.iconics.utils.Utils;
 
 import java.util.List;
 
@@ -19,9 +25,15 @@ public class AttendenceAdapter  extends RecyclerView.Adapter<AttendenceAdapter.V
 
     private List<Attendence> attendenceList;
 
-    public AttendenceAdapter(List<Attendence> attendenceList)
+    private Context context;
+    private int lastAnimatedPosition = -1;
+    private static  int ANIMATED_ITEMS_COUNT = 0;
+    float basespeed =1.f;
+
+    public AttendenceAdapter(List<Attendence> attendenceList,Context context)
     {
         this.attendenceList=attendenceList;
+        //this.context = context;
     }
 
     @Override
@@ -35,6 +47,7 @@ public class AttendenceAdapter  extends RecyclerView.Adapter<AttendenceAdapter.V
     @Override
     public void onBindViewHolder(Viewholder holder, int position) {
 
+        //runEnterAnimation(holder.itemView, position,basespeed+.5f);
         Attendence attendence = attendenceList.get(position);
         holder.course_.setText(attendence.getCourse());
         holder.teacher.setText(attendence.getTeacher());
@@ -42,6 +55,7 @@ public class AttendenceAdapter  extends RecyclerView.Adapter<AttendenceAdapter.V
         holder.present.setText(attendence.getPresent());
         holder.credit.setText(attendence.getCredit());
         holder.days.setText(attendence.getDaysoff());
+        Log.d("Fukc",String.valueOf(holder.getItemViewType()));
 
     }
 
@@ -62,5 +76,35 @@ public class AttendenceAdapter  extends RecyclerView.Adapter<AttendenceAdapter.V
             credit=(TextView) itemView.findViewById(R.id.creditval);
             days=(TextView) itemView.findViewById(R.id.days);
         }
+    }
+
+
+    private void runEnterAnimation(View view, int position,float speed) {
+        if (position >= ANIMATED_ITEMS_COUNT - 1) {
+            return;
+        }
+
+        if (position > lastAnimatedPosition) {
+            lastAnimatedPosition = position;
+            view.setTranslationY(utility.getScreenHeight(context));
+            view.animate()
+                    .translationY(0)
+                    .setInterpolator(new DecelerateInterpolator(speed))
+                    .setDuration(700)
+                    .start();
+        }
+    }
+
+    public void updateItems()
+    {
+        attendenceList= AttendenceProvider.getAttendenceList();
+        //ANIMATED_ITEMS_COUNT=attendenceList.size();
+        notifyItemRangeInserted(0, attendenceList.size());
+    }
+
+
+    public void add(Attendence attendence, int position) {
+        attendenceList.add(position,attendence);
+        notifyItemInserted(position);
     }
 }

@@ -29,4 +29,9 @@ public class AttendenceProvider {
 
         return attendenceList;
     }
+
+    public static Attendence getAttendenceAtPostion(int position)
+    {
+     return    attendenceList.get(position);
+    }
 }

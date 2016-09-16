@@ -8,12 +8,22 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="MyMaterialTheme.launchersplash" parent="Theme.AppCompat.NoActionBar">
+    <style name="MyMaterialTheme.launchersplash" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="MyMaterialThemezzz" parent="MyMaterialTheme.Base">
         <item name="android:windowBackground">@color/googlebackground</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#FFD700</item>
+        <item name="colorControlActivated">#FFD700</item>
     </style>
 
 </resources>

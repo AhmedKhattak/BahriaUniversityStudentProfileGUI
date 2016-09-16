@@ -26,6 +26,7 @@ public class Fragment2 extends Fragment {
     private RecyclerView recyclerView;
     private ExamSeatingPlanAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
+    private RecyclerView.RecycledViewPool recycledViewPool;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -35,11 +36,15 @@ public class Fragment2 extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext()){
             @Override
             protected int getExtraLayoutSpace(RecyclerView.State state) {
-                return 4000;
+                return 3000;
             }
         };
+        recycledViewPool=new RecyclerView.RecycledViewPool();
+        recycledViewPool.setMaxRecycledViews(0,15);
+        recycledViewPool.setMaxRecycledViews(1,15);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setRecycledViewPool(recycledViewPool);
         recyclerView.setAdapter(mAdapter);
     }
 

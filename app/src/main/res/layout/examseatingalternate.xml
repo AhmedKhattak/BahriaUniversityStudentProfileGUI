@@ -20,10 +20,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/courseval"
@@ -34,7 +30,6 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold" />
-        </LinearLayout>
 
 
         <LinearLayout
@@ -57,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/courseval"
                 android:layout_toRightOf="@+id/date"
-                android:text="-" />
+                android:text="@string/natext"/>
         </LinearLayout>
 
 
@@ -81,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dateval"
                 android:layout_toRightOf="@+id/time"
-                android:text="-" />
+                android:text="@string/natext" />
         </LinearLayout>
 
 
@@ -105,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/timeval"
                 android:layout_toRightOf="@+id/room"
-                android:text="-"
+                android:text="@string/natext"
 
                 />
         </LinearLayout>
@@ -131,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/roomval"
                 android:layout_toRightOf="@+id/row"
-                android:text="-" />
+                android:text="@string/natext" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rowval"
                 android:layout_toRightOf="@+id/column"
-                android:text="-" />
+                android:text="@string/natext" />
         </LinearLayout>
 
     </LinearLayout>

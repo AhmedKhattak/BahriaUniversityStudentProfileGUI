@@ -7,9 +7,6 @@
     <string name="gradeval"> F </string>
     <string name="course">Course</string>
     <string name="grade">Grade</string>
-    <string name="note">*NOTE:1.Mobile Phones Are Not Allowed.
-2.Please check class, section, session and room. Incase of any query contact exam section immediately.
-3.Be seated at your allocated seat 10 minutes before start of the paper. Student reporting late will not be allowed to enter in exam hall after 05 minutes of start of paper.</string>
     <string name="pug">Pug Notification</string>
     <string name="jsoup">Jsoup</string>
     <string name="mdialogs">Material Dialogs</string>
@@ -110,7 +107,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</string>
-    <string name="test">test</string>
     <string name="openDrawer">open drawer</string>
     <string name="closeDrawer">close drawer</string>
     <string name="font_name_Roboto">Roboto</string>
@@ -118,4 +114,5 @@ THE SOFTWARE.</string>
     <string name="wewould"><b>We\'d  &#x2764; to know about your views and suggestions ! </b></string>
     <string name="appdescription">BU Student Portal for Bahria University Student portal shit fuck description nae pata ?!</string>
     <string name="transtionname">fuck</string>
+    <string name="natext">n/a</string>
 </resources>

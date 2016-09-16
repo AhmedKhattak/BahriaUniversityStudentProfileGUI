@@ -2,23 +2,30 @@ package com.example.ahmed.redux;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.media.RatingCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.ahmed.redux.Activities.FeedBackActivity;
 import com.example.ahmed.redux.Activities.ProfileActivity;
 import com.example.ahmed.redux.Activities.SettingsActivity;
@@ -47,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
     String NAME = "Ahmed Khattak";
     String ENROLL = "01-134132-016";
     int PROFILE = R.drawable.test_account_pic;
+    private ImageView logoutImageView;
+
     //String appPackageName = getPackageName();
 
     /* RecyclerView mRecyclerView;                           // Declaring RecyclerView
@@ -72,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
         setupTabIcons();
+
+
+
 
        /* mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -125,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(1).withName("Settings").withIcon(R.drawable.ic_settings_grey600_24dp);
         PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(1).withName("Rate Us !").withIcon(R.drawable.ic_bullhorn_grey600_24dp);
         PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(1).withName("Feedback").withIcon(R.drawable.ic_comment_text_grey600_24dp);
-        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(1).withName("Logout").withIcon(R.drawable.ic_logout_grey600_24dp);
 
         //create the drawer and remember the `Drawer` result object
         Drawer result = new DrawerBuilder()
@@ -139,72 +150,71 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
                         new DividerDrawerItem(),
                         item5,
                         item6,
-                        item7, item8
+                        item7
                 )
                 .withAccountHeader(headerResult)
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                        if(position==1)
-                        {
+                        if (position == 1) {
                             // User chose the "tabdownload" action open modal or something
+
                             Intent j = new Intent(MainActivity.this, ProfileActivity.class);
                             startActivity(j);
                             //overridePendingTransition(R.anim.Animation_3, android.R.anim.fade_out);
-                        }
-                        else if(position==2)
-                        {
+                        } else if (position == 2) {
 
-                        }
-                        else if(position==3)
-                        {
+                        } else if (position == 3) {
 
-                        }
-                        else if(position==4)
-                        {
+                        } else if (position == 4) {
 
-                        }
-                        else if(position==5)
-                        {
+                        } else if (position == 5) {
 
-                        }
-                        else if(position==6)
-                        {
+                        } else if (position == 6) {
                             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
                             startActivity(i);
                             //overridePendingTransition(R.anim.Animation_3, android.R.anim.fade_out);
-                        }
-                        else if(position==7)
-                        {
-                             // getPackageName() from Context or Activity object
+                        } else if (position == 7) {
+                            // getPackageName() from Context or Activity object
                             try {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" +"com.bu.innovate.bustudentportal" )));
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.bu.innovate.bustudentportal")));
                             } catch (android.content.ActivityNotFoundException anfe) {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" +"com.bu.innovate.bustudentportal" )));
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "com.bu.innovate.bustudentportal")));
                             }
-                        }
-                        else if(position==8)
-                        {
-                            Intent i = new Intent(MainActivity.this, FeedBackActivity.class);
-                            startActivity(i);
-                        }
-                        else if(position==9)
-                        {
+                        } else if (position == 8) {
+                            /*Intent i = new Intent(MainActivity.this, FeedBackActivity.class);
+                            startActivity(i);*/
 
-                        }
-                        else if(position==10)
-                        {
+                            new MaterialDialog.Builder(MainActivity.this)
+                                    .title("")
+                                    .customView(R.layout.feedback_dialog_content, true)
+                                    .positiveText("Send Feedback")
+                                    .show();
+                        } else if (position == 9) {
+
+                        } else if (position == 10) {
 
                         }
                         return true;
                     }
                 }).withActionBarDrawerToggleAnimated(true).withSelectedItem(-1).withDelayOnDrawerClose(-1)
+                .withSliderBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.googlebackground))
+                .withDelayDrawerClickEvent(400)
                 .build();
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+
+       /* logoutImageView = (ImageView) findViewById(R.id.logout);
+        logoutImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });*/
 
 
     }
@@ -254,10 +264,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerAdapter.
             tabLayout.getTabAt(0).setIcon(R.drawable.ic_account_check_white_24dp);
             tabLayout.getTabAt(1).setIcon(R.drawable.ic_calendar_clock_white_24dp);
             tabLayout.getTabAt(2).setIcon(R.drawable.ic_format_list_bulleted_type_white_24dp);
-        }
-        catch (NullPointerException x)
-        {
-            Log.d("Fuck",x.getMessage());
+        } catch (NullPointerException x) {
+            Log.d("Fuck", x.getMessage());
         }
     }
 

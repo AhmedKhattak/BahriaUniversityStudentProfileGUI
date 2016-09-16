@@ -33,7 +33,7 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         switch (viewType) {
             case ExamObject:
-                View v1 = inflater.inflate(R.layout.examseatingalternate, parent, false);
+                View v1 = inflater.inflate(R.layout.examseatingplan, parent, false);
                 viewHolder = new ExamHolder(v1);
                 break;
             case NoteObject:
@@ -134,7 +134,7 @@ public class ExamSeatingPlanAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         public ExamHolder(View itemView) {
             super(itemView);
-            course_ = (TextView) itemView.findViewById(R.id.courseval);
+            course_ = (TextView) itemView.findViewById(R.id.course);
             date = (TextView) itemView.findViewById(R.id.dateval);
             time_ = (TextView) itemView.findViewById(R.id.timeval);
             room = (TextView) itemView.findViewById(R.id.roomval);

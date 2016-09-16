@@ -3,9 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="1dp"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
 
     android:id="@+id/examseatingplancard">
 
@@ -17,109 +20,67 @@
 
         <TextView
             android:id="@+id/course"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Course"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
 
-        <TextView
-            android:id="@+id/courseval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:layout_toRightOf="@+id/course"
-            />
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/courseval"
-            android:text="Date"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
 
         <TextView
             android:id="@+id/dateval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:layout_toRightOf="@+id/date"
-            android:layout_below="@+id/courseval"
+            android:text="@string/natext"
+            android:layout_below="@+id/course"
+            android:layout_marginBottom="4dp"
             />
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/dateval"
-            android:text="Time"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
+
 
         <TextView
             android:id="@+id/timeval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:text="@string/natext"
             android:layout_toRightOf="@+id/time"
             android:layout_below="@+id/dateval"
+            android:layout_marginBottom="4dp"
             />
-        <TextView
-            android:id="@+id/room"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/timeval"
-            android:text="Room"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+
 
         <TextView
             android:id="@+id/roomval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:text="@string/natext"
             android:layout_toRightOf="@+id/room"
             android:layout_below="@+id/timeval"
+            android:layout_marginBottom="4dp"
 
             />
 
-        <TextView
-            android:id="@+id/row"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/roomval"
-            android:text="Row"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
+
 
         <TextView
             android:id="@+id/rowval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:text="@string/natext"
             android:layout_toRightOf="@+id/row"
             android:layout_below="@+id/roomval"
+            android:layout_marginBottom="4dp"
             />
-
-        <TextView
-            android:id="@+id/column"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rowval"
-            android:text="Column"
-            android:textStyle="bold"
-           />
-
 
         <TextView
             android:id="@+id/columnval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
+            android:text="@string/natext"
             android:layout_toRightOf="@+id/column"
             android:layout_below="@+id/rowval"
+            android:layout_marginBottom="4dp"
             />
     </RelativeLayout>
 
