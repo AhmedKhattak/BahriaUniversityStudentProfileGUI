@@ -1,4 +1,4 @@
-# BahriaUniversityStudentProfileTemplate
+# BahriaUniversityStudentProfileGUI
 Android app GUI concept for Bahria University Student Portal
 
 ### Screen shots
